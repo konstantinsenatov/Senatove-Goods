@@ -1,165 +1,90 @@
 # Senatove Consultant Landing
 
-## Product / Template Name
-`Consultant Landing` is a premium minimal static landing page template from Senatove Service Landing Pack v1.
+Premium static **HTML / CSS / vanilla JS** template for **independent consultants**, fractional executives, advisors, and expert-led practices. Visual direction: **parchment**, **ink**, **cool blue-gray**, subdued **gold** accents—deliberately distinct from the warm agency template.
 
-## Consultant Design Direction
-- Authority-first personal expert page
-- Calm editorial pacing (not portfolio-driven)
-- Method-led conversion flow for advisory offers
-- Built for trust-building conversations, not loud promotion
+## What is included
 
-## Who This Is For
-- Independent consultants
-- B2B advisors
-- Business strategists
-- Coaches
-- Expert personal brands
-- Specialists selling calls, sessions, advisory, or strategy packages
+- `index.html` — full page structure and copy placeholders
+- `assets/css/style.css` — palette variables, layout, abstract placeholders
+- `assets/js/main.js` — mobile navigation, FAQ accordion, calm scroll reveals
+- `assets/images/` — optional folder if you add real portraits or screenshots
 
-## What Is Included
-- `consultant-landing/`
-  - `index.html`
-  - `assets/css/style.css`
-  - `assets/js/main.js`
-  - `assets/images/` (placeholder folder for visuals)
+No frameworks, bundlers, or npm dependencies.
 
-Built with:
-- HTML
-- CSS
-- Vanilla JavaScript
+## Sections & flow
 
-No frameworks, no build tools, and no dependencies required.
+1. Header with primary navigation  
+2. **Personal expert hero** — asymmetric layout: narrative left, **profile panel** right (monogram / portrait placeholder, Elena Morgan sample name)  
+3. **Diagnosis / positioning** — editorial horizontal rows (not agency-style cards)  
+4. **The Clarity Method** — cool-toned framework strip  
+5. **Advisory Formats** — three consultant offer cards with CSS-only mockups  
+6. **Strategic Work Examples** — alternating image/text rows with abstract “document / path / framework” blocks  
+7. **Authority / credentials** split  
+8. **Outcomes** — underline-style metric rows  
+9. **Core domains** — left-border editorial grid  
+10. **Testimonials** — ink-accent quotes  
+11. **Engagement options** — three packages  
+12. **Booking CTA** — consultation panel  
+13. **FAQ** with **+ / −** indicators on each question  
+14. **Final CTA** and footer  
 
-## Page Structure
-1. Header
-2. Personal Expert Hero (with authority profile panel)
-3. Problem / Positioning rows
-4. Method
-5. Authority / About split section
-6. Insight Results
-7. Expertise list
-8. Testimonials
-9. Engagement Options
-10. Booking CTA panel
-11. FAQ
-12. Final CTA
-13. Footer
+## Personal hero & portrait placeholder
 
-This sequence is built for clarity and conversion. Keep it unless you have a specific reason to change it.
+- Default name: **Elena Morgan**, title **Independent Strategy Consultant** (edit in `index.html`).
+- **Status line:** “Available for selected advisory work” (`.status-badge`).
+- **Focus tags:** Positioning, Offers, Growth, Clarity (`.focus-tags`).
+- **Monogram:** `.profile-portrait-large` contains `<span>E M</span>` — replace with an `<img>` portrait or new initials.
+- Decorative **ring** (`.portrait-ring`) is pure CSS; remove in HTML/CSS if you prefer a simple photo only.
 
-## Authority-First Structure
-- Hero combines positioning message + personal authority panel
-- Problem rows diagnose buyer hesitation before pitching offers
-- The Clarity Method establishes framework credibility
-- Authority/Credentials section adds trust before engagement options
-- Booking CTA appears after context, not as an aggressive first ask
+## Editing abstract mockups
 
-## Method-Led Conversion Logic
-- Visitors first understand the problem
-- Then see your framework (`Diagnose -> Position -> Package -> Guide`)
-- Then review outcomes and engagement levels
-- Then move to consultation request with higher intent
+| Area | Location in HTML | Notes |
+|------|------------------|--------|
+| Advisory format cards | `.advisory-format-mock` variants | Document bars, sprint blocks, simple “chart” placeholders |
+| Strategic work rows | `.mock-advisory-document`, `.mock-path-diagram`, `.mock-framework-sheet` | Swap for images or trim `<div>` wrappers |
+| Credentials / booking | standard panels | Plain text and lists |
 
-## How To Edit Copy
-1. Open `index.html`.
-2. Update headlines, profile text, outcomes, engagement details, testimonials, and button labels.
-3. Keep section IDs (for example `#expertise`, `#method`, `#results`, `#engagement`, `#faq`) if you want navigation links to keep working.
-4. Keep CTA labels action-focused (for example: "Book a Call", "Get Proposal", "Schedule Session").
+All placeholders are **HTML/CSS only**; no external assets required for the default look.
 
-## Personal Hero & Authority Panel
-- Consultant name placeholder: `Elena Morgan`
-- Role/title placeholder: `Independent Strategy Consultant`
-- Status badge and credibility bullets are inside `.profile-panel`
-- Profile initials block uses `.profile-portrait` and can be replaced with a real portrait image if needed
-- Additional advisory line is in `.profile-note`
+## Editing Advisory Formats
 
-## How To Edit Colors
-1. Open `assets/css/style.css`.
-2. Edit the `:root` variables at the top.
-3. Most-used color tokens:
-   - `--bg`
-   - `--surface`
-   - `--surface-muted`
-   - `--text`
-   - `--text-muted`
-   - `--border`
-   - `--accent`
+- Section id: `#formats` (nav: “Formats”).
+- Each card: `<article class="advisory-format-card">` — update `h3`, `p`, and the `href` on `.format-link`.
+- To remove a card, delete the whole `<article>` and adjust the grid in CSS if you want two columns.
 
-These variables control the overall visual style quickly.
+## Editing Strategic Work Examples
 
-## How To Edit Spacing / Layout
-- Section vertical spacing: `.section`
-- Main page width: `--container`
-- Hero layout: `.consultant-hero-grid`
-- Problem rows: `.problem-rows` and `.problem-row`
-- Method layout: `.method-framework` and `.method-stage`
-- Engagement options layout: `.engagement-layout`
-- Card and panel corner style: `--radius-sm`, `--radius-md`, `--radius-lg`
+- Section id: `#work-examples`.
+- Rows use `.work-example-row--media-left` or `--media-right` (desktop alternation; mobile stacks text then visual for right variant).
+- Replace copy under `.work-example-copy` and lists `.work-mini-list`.
+- Replace or remove `.work-example-mock` blocks as needed.
 
-## How To Edit Credentials
-- Credentials list is in `.credentials-panel ul`
-- Keep each point short and proof-based (sessions, years, scope, process)
-- Keep 3-5 items for readability
+## Color system
 
-## How To Edit The Clarity Method
-- Method block is in `.method-framework`
-- Each stage uses `.method-stage` and `.method-step`
-- Recommended structure per stage:
-  - number
-  - stage name
-  - one concise explanation line
-- Keep wording strategic and specific
+Edit **`:root`** at the top of `assets/css/style.css`:
 
-## How To Edit Engagement Options
-- Engagement cards are in `.engagement-layout`
-- Update names, pricing labels, bullets, and CTA copy
-- Keep one featured card with `.engagement-card.featured` for primary offer
+- `--bg` — parchment page  
+- `--surface` — paper panels  
+- `--surface-muted` — cool section washes  
+- `--text` / `--text-muted` — ink tones  
+- `--accent` / `--accent-soft` — subdued gold  
+- `--border` — editorial dividers  
+- `--shadow-sm` / `--shadow-md`  
 
-## How To Replace Placeholders
-1. Add your images to `assets/images/`.
-2. Replace initials in `.profile-portrait` with your own initials or image.
-3. If needed, add portrait or supporting visuals with descriptive `alt` text.
+## FAQ accordion & indicators
 
-## How The JavaScript Works
-`assets/js/main.js` includes:
-- Mobile menu open/close toggle
-- Auto-close mobile menu on nav link click
-- Close mobile menu on `Esc`
-- FAQ accordion open/close behavior
-- IntersectionObserver reveal system for calm section entrances
-- Sequential reveal for `.method-step` stages
+- Each question is a `<button class="faq-question">` with `.faq-question-text` and `.faq-toggle-icon` (visual **+** closed, **−** open).
+- **Hover** and **`:focus-visible`** styles are in CSS; behavior is toggled in `main.js` via `.open` on `.faq-item` and `aria-expanded`.
 
-## Animation System
-- Reveal classes:
-  - `.reveal`
-  - `.reveal-soft`
-  - `.reveal-line`
-  - `.method-step`
-- Active visibility class: `.is-visible`
-- Motion style is intentionally calm and slower than agency templates
-- No parallax and no continuous animations
+## Animations
 
-## How To Reduce / Disable Motion
-- Built-in support for `prefers-reduced-motion: reduce` is included in CSS.
-- In reduced motion mode:
-  - transitions/animations are disabled
-  - reveal elements stay fully visible
-  - scroll behavior falls back to static
-- You can also remove reveal classes from HTML for a fully static presentation.
+- Classes: `.reveal`, `.reveal-soft`, `.reveal-line`, `.method-step` — observed once on scroll. **No parallax.**
+- Prefer reduced motion: CSS disables transitions when `prefers-reduced-motion: reduce` is set.
 
-## Quick Customization Checklist
-- Replace brand name (`Senatove Consultant`) in header/footer
-- Update personal hero headline, profile panel, and credibility bullets
-- Edit problem rows to match your audience objections
-- Update Clarity Method stage descriptions
-- Adjust authority credentials to real proof points
-- Replace outcomes and metrics in Insight Results
-- Update engagement names, prices, and scope
-- Keep the booking CTA focused on one clear next action
-- Connect CTA links to your booking flow or contact form
-- Replace footer social/contact links with real URLs
+## Deployment
 
-## Basic License (Placeholder)
-This template is part of a paid digital product by Senatove Goods.  
-Replace this section with your final commercial license terms before distribution.
+Upload the folder to any static host (Netlify, Vercel, GitHub Pages, cPanel, Cloudflare Pages). No build step.
+
+## License (placeholder)
+
+Bundled with Senatove Goods commercial terms—replace with your final license before redistribution.
