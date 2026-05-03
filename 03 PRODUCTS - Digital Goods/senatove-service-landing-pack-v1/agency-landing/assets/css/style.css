@@ -1,3 +1,19 @@
+/*
+ * Senatove Agency Landing — stylesheet outline
+ * --------------------------------------------
+ * CSS variables  → :root (palette & spacing)
+ * Base           → resets, typography, containers, shared sections
+ * Header         → site header & navigation
+ * Hero           → hero copy & studio board
+ * Components     → buttons, cards, FAQ controls, shared UI
+ * Sections       → capabilities, work, process, benefits, testimonials, pricing, CTA, footer
+ * Animations     → scroll reveal; disable via HTML classes or main.js (see note below)
+ * Responsive     → breakpoints at end of file
+ * Reduced motion → prefers-reduced-motion (with Animations block)
+ */
+
+/* ---------- CSS variables ---------- */
+/* Edit these variables first to customize the template palette and spacing scale. */
 :root {
   --bg: #f8f4ed;
   --surface: #fffdf8;
@@ -24,7 +40,7 @@
   --space-3xl: 6.25rem;
 }
 
-/* Base */
+/* ---------- Base ---------- */
 *,
 *::before,
 *::after {
@@ -125,7 +141,7 @@ ul {
   max-width: 42rem;
 }
 
-/* Buttons */
+/* ---------- Components: buttons ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -168,7 +184,7 @@ ul {
   box-shadow: var(--shadow-sm);
 }
 
-/* Header */
+/* ---------- Header ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -252,7 +268,7 @@ ul {
   display: none;
 }
 
-/* Hero */
+/* ---------- Hero ---------- */
 .hero {
   padding-top: var(--space-3xl);
 }
@@ -297,7 +313,7 @@ ul {
   color: var(--text-muted);
 }
 
-/* Studio board */
+/* Hero: studio board (abstract mockup — see README) */
 .studio-board {
   position: relative;
   min-width: 0;
@@ -710,7 +726,7 @@ ul {
   color: var(--text-muted);
 }
 
-/* Capabilities editorial */
+/* ---------- Sections: capabilities ---------- */
 .section-editorial .capability-card:nth-child(odd) {
   border-left: 3px solid #b8a894;
   padding-left: calc(var(--space-lg) - 2px);
@@ -746,7 +762,7 @@ ul {
   margin-bottom: 0.45rem;
 }
 
-/* Featured work */
+/* ---------- Sections: featured work ---------- */
 .section-featured {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -758,6 +774,8 @@ ul {
 }
 
 .work-case {
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -778,7 +796,12 @@ ul {
 }
 
 .case-primary .case-visual {
-  margin-bottom: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.work-case--large-bottom {
+  box-shadow: var(--shadow-md);
+  padding: calc(var(--space-lg) + 0.15rem);
 }
 
 .project-category {
@@ -795,8 +818,13 @@ ul {
 }
 
 .work-case--compact h3,
-.work-case--funnel h3 {
+.work-case--slot-b h3,
+.work-case--slot-d h3 {
   font-size: 1.12rem;
+}
+
+.work-case--large-bottom h3 {
+  font-size: 1.22rem;
 }
 
 .work-case p {
@@ -819,14 +847,16 @@ ul {
   padding: 0.42rem 0.85rem;
 }
 
-/* Case mockups */
+/* Featured work: abstract case mockups (see README) */
 .case-visual {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
   min-width: 0;
 }
+
 
 .case-mock {
   background: #e8decc;
@@ -1104,7 +1134,69 @@ ul {
   opacity: 0.7;
 }
 
-/* Cards */
+.case-mock--funnel.case-mock--funnel-tall {
+  height: auto;
+  min-height: 15.5rem;
+}
+
+@media (min-width: 760px) {
+  .case-mock--funnel.case-mock--funnel-tall {
+    min-height: 18.5rem;
+  }
+}
+
+/* Compact launch mock (featured grid slot) */
+.case-mock--launch {
+  height: 13.5rem;
+  background: linear-gradient(160deg, #eee6dc, #d9cfc2);
+  border: 1px solid #c9bfb0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.case-mock-launch-bar {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  padding: 0.45rem 0.55rem;
+  background: rgba(36, 33, 28, 0.06);
+  border-bottom: 1px solid rgba(36, 33, 28, 0.08);
+}
+
+.case-mock-launch-bar span {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: #b5a997;
+}
+
+.case-mock-launch-bar span:first-child {
+  background: #c97b63;
+}
+
+.case-mock-launch-body {
+  flex: 1;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.case-mock-launch-hero {
+  height: 3.35rem;
+  border-radius: 8px;
+  background: linear-gradient(120deg, #5c5448, #9a9082);
+  box-shadow: 0 6px 14px rgba(36, 33, 28, 0.12);
+}
+
+.case-mock-launch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+/* Components: cards, quotes, pricing tiles */
 .cards {
   display: grid;
   gap: var(--space-md);
@@ -1180,7 +1272,7 @@ ul {
   margin-bottom: 0.5rem;
 }
 
-/* Process — line editorial */
+/* Sections: process */
 .section-process-line .workflow-step {
   background: transparent;
   border: 0;
@@ -1193,7 +1285,7 @@ ul {
   background: #b8a894;
 }
 
-/* Benefits editorial */
+/* Sections: benefits */
 .benefits-editorial {
   display: grid;
   gap: 0;
@@ -1222,7 +1314,7 @@ ul {
   margin-bottom: 0.4rem;
 }
 
-/* Testimonials */
+/* Sections: testimonials */
 .quote-card p {
   font-size: 1.05rem;
   color: var(--text);
@@ -1235,7 +1327,7 @@ ul {
   color: var(--text-muted);
 }
 
-/* Pricing */
+/* Sections: pricing */
 .price {
   font-size: 1.65rem;
   color: var(--text);
@@ -1282,7 +1374,7 @@ ul {
   margin-bottom: 0.45rem;
 }
 
-/* FAQ */
+/* Components: FAQ accordion */
 .faq-list {
   display: grid;
   gap: 0.75rem;
@@ -1321,7 +1413,7 @@ ul {
   max-height: 18rem;
 }
 
-/* Final CTA */
+/* Sections: final CTA */
 .final-cta .container {
   max-width: min(100% - 2rem, 52rem);
 }
@@ -1369,7 +1461,7 @@ ul {
   margin-top: calc(var(--space-lg) + 0.25rem);
 }
 
-/* Footer */
+/* Sections: footer */
 .site-footer {
   border-top: 1px solid var(--border);
   padding-top: var(--space-xl);
@@ -1400,7 +1492,8 @@ body.nav-open {
   overflow: hidden;
 }
 
-/* Progressive reveal (enabled only when JS adds .js-enhanced) */
+/* ---------- Animations: scroll reveal ---------- */
+/* To disable: remove .reveal / .reveal-up / .reveal-scale / .parallax-soft from HTML, or comment out the reveal block in assets/js/main.js */
 .reveal,
 .reveal-up,
 .reveal-scale {
@@ -1428,6 +1521,7 @@ body.nav-open {
   transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1451,7 +1545,7 @@ body.nav-open {
   margin-top: 2rem;
 }
 
-/* Responsive */
+/* ---------- Responsive ---------- */
 @media (min-width: 760px) {
   .section-head {
     margin-bottom: calc(var(--space-xl) + 0.35rem);
@@ -1462,28 +1556,35 @@ body.nav-open {
   }
 
   .work-layout {
-    grid-template-columns: 1.45fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
     grid-template-areas:
-      "primary side1"
-      "primary side2";
+      "a a b"
+      "a a b"
+      "c c d"
+      "c c d";
     gap: var(--space-md);
-    align-items: start;
+    align-items: stretch;
   }
 
-  .case-primary {
-    grid-area: primary;
+  .work-case--slot-a {
+    grid-area: a;
   }
 
-  .work-layout article:nth-child(2) {
-    grid-area: side1;
+  .work-case--slot-b {
+    grid-area: b;
   }
 
-  .work-layout article:nth-child(3) {
-    grid-area: side2;
+  .work-case--slot-c {
+    grid-area: c;
   }
 
-  .work-case--compact,
-  .work-case--funnel {
+  .work-case--slot-d {
+    grid-area: d;
+  }
+
+  .work-case--slot-b,
+  .work-case--slot-d {
     padding: var(--space-md) var(--space-lg);
   }
 

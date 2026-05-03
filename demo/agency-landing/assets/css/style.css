@@ -774,6 +774,8 @@ ul {
 }
 
 .work-case {
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -794,7 +796,12 @@ ul {
 }
 
 .case-primary .case-visual {
-  margin-bottom: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.work-case--large-bottom {
+  box-shadow: var(--shadow-md);
+  padding: calc(var(--space-lg) + 0.15rem);
 }
 
 .project-category {
@@ -811,8 +818,13 @@ ul {
 }
 
 .work-case--compact h3,
-.work-case--funnel h3 {
+.work-case--slot-b h3,
+.work-case--slot-d h3 {
   font-size: 1.12rem;
+}
+
+.work-case--large-bottom h3 {
+  font-size: 1.22rem;
 }
 
 .work-case p {
@@ -840,9 +852,11 @@ ul {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
   min-width: 0;
 }
+
 
 .case-mock {
   background: #e8decc;
@@ -1118,6 +1132,68 @@ ul {
   border-radius: 4px;
   background: #b8ab9a;
   opacity: 0.7;
+}
+
+.case-mock--funnel.case-mock--funnel-tall {
+  height: auto;
+  min-height: 15.5rem;
+}
+
+@media (min-width: 760px) {
+  .case-mock--funnel.case-mock--funnel-tall {
+    min-height: 18.5rem;
+  }
+}
+
+/* Compact launch mock (featured grid slot) */
+.case-mock--launch {
+  height: 13.5rem;
+  background: linear-gradient(160deg, #eee6dc, #d9cfc2);
+  border: 1px solid #c9bfb0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.case-mock-launch-bar {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  padding: 0.45rem 0.55rem;
+  background: rgba(36, 33, 28, 0.06);
+  border-bottom: 1px solid rgba(36, 33, 28, 0.08);
+}
+
+.case-mock-launch-bar span {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: #b5a997;
+}
+
+.case-mock-launch-bar span:first-child {
+  background: #c97b63;
+}
+
+.case-mock-launch-body {
+  flex: 1;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.case-mock-launch-hero {
+  height: 3.35rem;
+  border-radius: 8px;
+  background: linear-gradient(120deg, #5c5448, #9a9082);
+  box-shadow: 0 6px 14px rgba(36, 33, 28, 0.12);
+}
+
+.case-mock-launch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
 }
 
 /* Components: cards, quotes, pricing tiles */
@@ -1480,28 +1556,35 @@ body.nav-open {
   }
 
   .work-layout {
-    grid-template-columns: 1.45fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
     grid-template-areas:
-      "primary side1"
-      "primary side2";
+      "a a b"
+      "a a b"
+      "c c d"
+      "c c d";
     gap: var(--space-md);
-    align-items: start;
+    align-items: stretch;
   }
 
-  .case-primary {
-    grid-area: primary;
+  .work-case--slot-a {
+    grid-area: a;
   }
 
-  .work-layout article:nth-child(2) {
-    grid-area: side1;
+  .work-case--slot-b {
+    grid-area: b;
   }
 
-  .work-layout article:nth-child(3) {
-    grid-area: side2;
+  .work-case--slot-c {
+    grid-area: c;
   }
 
-  .work-case--compact,
-  .work-case--funnel {
+  .work-case--slot-d {
+    grid-area: d;
+  }
+
+  .work-case--slot-b,
+  .work-case--slot-d {
     padding: var(--space-md) var(--space-lg);
   }
 
