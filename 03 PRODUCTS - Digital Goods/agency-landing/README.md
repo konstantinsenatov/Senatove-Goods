@@ -76,8 +76,10 @@ These variables control the full visual system.
 - Preserve visual hierarchy: Hero -> Work -> Process -> Pricing.
 
 ## How To Replace Images / Placeholders
+Featured work and the hero studio board use **abstract HTML/CSS mockups** (layout lines, faux browser chrome, gradient shapes)—they are intentional placeholders, not missing assets. Replace those blocks with real images or your own visuals when you ship.
+
 1. Add your image files to `assets/images/`.
-2. In `index.html`, replace placeholder visual blocks (`.case-visual`, board placeholders in `.studio-board`) with real visuals or refined mockups.
+2. In `index.html`, swap the mockup markup inside `.case-visual`, `.case-mock`, and `.studio-board` for `<img>` tags or your own blocks as needed.
 3. Use descriptive `alt` text for accessibility.
 
 ## How To Edit Metrics
