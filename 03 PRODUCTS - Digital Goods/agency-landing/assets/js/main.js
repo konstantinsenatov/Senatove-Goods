@@ -1,8 +1,15 @@
+/**
+ * Senatove Agency Landing — vanilla JS (no libraries).
+ * Mobile nav, FAQ accordion, scroll reveal, optional soft parallax.
+ * See README.md to disable animations or adjust behavior.
+ */
+
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Mobile navigation: toggle .open on #site-nav, sync aria-expanded, lock body scroll while open */
 if (menuToggle && siteNav) {
   const closeMenu = () => {
     siteNav.classList.remove("open");
@@ -29,6 +36,7 @@ if (menuToggle && siteNav) {
   });
 }
 
+/* FAQ accordion: toggle .open on .faq-item, aria-expanded on the question button */
 const faqQuestions = document.querySelectorAll(".faq-question");
 
 faqQuestions.forEach((question) => {
@@ -41,6 +49,7 @@ faqQuestions.forEach((question) => {
   });
 });
 
+/* Scroll reveal + parallax: skipped entirely when user prefers reduced motion (CSS also disables transitions) */
 if (!prefersReducedMotion) {
   document.documentElement.classList.add("js-enhanced");
 
@@ -83,6 +92,7 @@ if (!prefersReducedMotion) {
     });
   }
 
+  /* Soft parallax on .parallax-soft elements (light vertical shift while scrolling) */
   if (parallaxElements.length > 0) {
     const updateParallax = () => {
       const scrollY = window.scrollY || window.pageYOffset;

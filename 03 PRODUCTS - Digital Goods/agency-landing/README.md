@@ -1,129 +1,164 @@
-# Senatove Service Landing Pack v1
+# Senatove Agency Landing
 
-## Template Included
-- `agency-landing/`
-  - `index.html`
-  - `assets/css/style.css`
-  - `assets/js/main.js`
-  - `assets/images/` (placeholder folder for your visuals)
+## What this is
 
-## About This Template
-`Agency Landing` is a premium minimal static landing page for digital agencies, creative studios, consultants, and service businesses.
+This is a **static HTML/CSS/JavaScript landing page template** for digital agencies, creative studios, freelancers, and service-based teams. You edit files directly and upload them to hosting—no build step.
 
-Design direction:
-- Portfolio-first creative agency layout
-- Editorial section rhythm with stronger asymmetry
-- Case-study emphasis with larger project presence
-- Calm premium visuals for strategy/design/web/growth studios
+**This is not** a WordPress theme.  
+**This is not** a no-code builder page.  
+**This is not** a plugin.
 
-Built with:
-- HTML
-- CSS
-- Vanilla JavaScript
+**Basic HTML and CSS knowledge is recommended** so you can swap copy, colors, links, and sections confidently.
 
-No frameworks, no build tools, and no dependencies required.
+## What is included
 
-## Who This Is For
-- Digital agencies
-- Creative studios
-- Freelance consultants
-- Service businesses that need a focused landing page
+| Item | Notes |
+|------|--------|
+| `index.html` | Full page markup and text |
+| `assets/css/style.css` | All styling; palette uses CSS variables at the top |
+| `assets/js/main.js` | Mobile nav, FAQ accordion, scroll reveal, optional soft parallax |
+| `assets/images/` | Empty folder—add your own images if you use `<img>` tags |
+| Responsive layout | Mobile, tablet, and desktop breakpoints |
+| Mobile navigation | Hamburger menu on small screens |
+| FAQ accordion | Expand/collapse questions |
+| Reveal animations | Optional fade/slide-in on scroll (vanilla JS + CSS) |
+| Abstract HTML/CSS project mockups | Decorative placeholders in the hero and portfolio—not broken images |
 
-## Page Structure (Section Order)
-The template follows a practical conversion flow:
-1. Hero
-2. Capabilities
-3. Featured Work (portfolio emphasis)
-4. Studio Workflow
-5. Benefits
-6. Testimonials
-7. Studio Pricing
-8. FAQ
-9. Final CTA
+There are **no npm packages, no bundler, and no frameworks**.
 
-This order is intentional. Keep it unless you have a strong reason to change it.
+## Quick start
 
-## How To Edit Text
-1. Open `index.html` in any code editor.
-2. Replace headings, paragraphs, button labels, and section copy with your own content.
-3. Keep section IDs (for example `#services`, `#pricing`) if you want navigation links to keep working.
-4. Keep the CTA labels action-focused (for example: "Book Call", "Start Project", "Get Proposal").
+1. Open `index.html` in your browser (double-click or use a local preview).
+2. Edit visible text directly in `index.html`.
+3. Adjust colors in `assets/css/style.css` (see the `:root` variables).
+4. Replace project names, pricing numbers, FAQ answers, and **CTA `href` values** with your links or anchors.
+5. Either **keep** the abstract HTML/CSS mockups, **customize** their markup/CSS, or **replace** them with real screenshots.
+6. Upload the entire folder to your web host (see **How to deploy**).
 
-## How To Edit Colors
-1. Open `assets/css/style.css`.
-2. Go to the `:root` block at the top.
-3. Update color variables such as:
-   - `--bg`
-   - `--surface`
-   - `--text`
-   - `--border`
-   - `--accent`
+## Recommended editing order
 
-These variables control the full visual system.
+1. Logo / brand name (header and footer)
+2. Hero headline and paragraphs
+3. CTA links (`href` on buttons and main nav)
+4. Services / capabilities
+5. Featured work / case studies
+6. Process
+7. Benefits
+8. Testimonials
+9. Pricing
+10. FAQ
+11. Footer links and social URLs
 
-## How To Edit Spacing / Layout
-- Section spacing: `.section`
-- Main container width: `--container`
-- Hero layout: `.hero-grid` and `.studio-board`
-- Capabilities layout: `.capability-grid`
-- Featured work layout: `.work-layout` and `.work-case`
-- Process layout: `.workflow-line` and `.workflow-step`
+## How to edit text
 
-## Portfolio-First Rhythm Notes
-- `#work` is intentionally the most visually dominant section after hero.
-- One primary case (`.case-primary`) is larger than supporting cases.
-- Keep project headlines concise and show one clear metric per case.
-- Preserve visual hierarchy: Hero -> Work -> Process -> Pricing.
+Almost all visible copy lives in **`index.html`**. Search for headings (`<h1>`, `<h2>`, `<h3>`), paragraphs (`<p>`), list items, and button labels.  
 
-## How To Replace Images / Placeholders
-Featured work and the hero studio board use **abstract HTML/CSS mockups** (layout lines, faux browser chrome, gradient shapes)—they are intentional placeholders, not missing assets. Replace those blocks with real images or your own visuals when you ship.
+Keep section **`id` attributes** (for example `id="services"`, `id="work"`, `id="pricing"`, `id="contact"`) if you want in-page navigation (`#services`, etc.) to keep working.
 
-1. Add your image files to `assets/images/`.
-2. In `index.html`, swap the mockup markup inside `.case-visual`, `.case-mock`, and `.studio-board` for `<img>` tags or your own blocks as needed.
-3. Use descriptive `alt` text for accessibility.
+## How to edit colors
 
-## How To Edit Metrics
-- Hero board metrics: `.board-metric-row`
-- Case metrics: `strong` elements inside `.work-case`
-- Keep metric labels short (for example: `+38% lead quality`, `2.4x inquiries`)
+Colors are controlled by **CSS variables** in the `:root { ... }` block at the **top** of `assets/css/style.css`.
 
-## How To Open The Template
-- Option 1: Open `index.html` directly in your browser.
-- Option 2: Use a local server extension in your editor for live preview.
+Examples:
 
-## JavaScript Features
-`assets/js/main.js` includes:
-- Mobile menu toggle
-- Auto-close mobile menu on nav link click
-- Close mobile menu on `Esc`
-- FAQ accordion toggle
-- Scroll reveal animation with `IntersectionObserver`
-- Stagger reveal support for grouped items
-- Soft parallax movement for selected visual placeholders
+- `--bg` — page background  
+- `--surface` — cards and panels  
+- `--text` — main text  
+- `--accent` — buttons and emphasis  
+- `--border` — outlines and dividers  
 
-## Animation System
-- Reveal classes: `.reveal`, `.reveal-up`, `.reveal-scale`
-- Visibility class added by JS: `.is-visible`
-- Stagger container class: `.stagger`
-- Optional soft movement class: `.parallax-soft`
-- Progressive enhancement: content remains visible if JS is unavailable
+Change a variable once and it propagates across the template.
 
-## Reduce / Disable Motion
-- Built-in support for `prefers-reduced-motion: reduce` is included in `assets/css/style.css`.
-- In reduced motion mode:
-  - animations/transitions are disabled
-  - reveal elements stay visible
-  - smooth scroll behavior is disabled
-- You can also remove reveal/parallax classes from HTML if you want a fully static feel.
+## How to edit project visuals
 
-## Quick Customization Checklist
-- Replace brand name (`Senatove Agency`) in header and footer
-- Update hero headline, CTA labels, and studio board content
-- Replace featured project visuals and case metrics
-- Adjust capability names to your agency/studio services
-- Update pricing package names and positioning
-- Replace footer social links with real profile URLs
+Current portfolio and hero visuals are **abstract HTML/CSS mockups** (shapes, faux browser chrome, lines)—not photographs or missing assets.
 
-## License (Placeholder)
-This template is part of a paid digital product by Senatove Goods.  
-Replace this section with your final commercial license terms before distribution.
+You can:
+
+- Leave them as styled placeholders  
+- Edit the HTML structure and CSS classes inside `.studio-board`, `.case-visual`, and `.case-mock`  
+- Replace a mockup block with `<img src="assets/images/..." alt="...">`  
+- Remove a mockup section if you do not need it  
+
+## How to update CTA links
+
+Every button and nav link uses a normal anchor: `<a href="...">`.
+
+- **Same-page sections:** use hash links that match section IDs, for example:
+  - `#services` — Capabilities  
+  - `#work` — Featured Work  
+  - `#process` — Process  
+  - `#pricing` — Pricing  
+  - `#faq` — FAQ  
+  - `#contact` — Final CTA / contact block  
+- **External pages:** use full URLs, for example `href="https://example.com/contact"`  
+- **Email:** `href="mailto:you@example.com"`  
+- **Phone:** `href="tel:+1234567890"`  
+
+Update both the **header nav**, **footer links**, and **button** `href` values wherever visitors should go.
+
+## Important note about forms / contact
+
+**This template does not include server-side form processing.** All buttons and “contact” actions are **static front-end links**—they scroll, open mail clients, or go to URLs you set.
+
+To collect form submissions you must connect:
+
+- A hosted form service (examples: **Formspree**, **Getform**, **Netlify Forms**), or  
+- Your own **backend** or **API**, or  
+- A **CMS** that serves forms, or  
+- If you later embed this HTML inside **WordPress**, a **form plugin** there  
+
+Those names are **examples only**—they are not bundled or required by this template.
+
+## How animations work
+
+- **Scroll reveal:** elements use classes like `.reveal`, `.reveal-up`, `.reveal-scale`. JavaScript adds `.js-enhanced` on the root and toggles `.is-visible` when sections enter the viewport (`IntersectionObserver`).  
+- **Stagger:** parent `.stagger` groups apply a short delay between child reveals.  
+- **Soft parallax:** `.parallax-soft` applies a light vertical shift on scroll (optional).  
+- **Mobile menu & FAQ:** toggled in `assets/js/main.js` with plain DOM APIs—no libraries.
+
+## How to disable animations
+
+**Option 1 — HTML:** Remove classes `reveal`, `reveal-up`, `reveal-scale`, `stagger` (from parents), and `parallax-soft` from elements you want static. Content stays visible without animation.
+
+**Option 2 — JavaScript:** Comment out or remove the block that adds `js-enhanced` and runs `IntersectionObserver` / parallax in `assets/js/main.js`. Without `.js-enhanced`, CSS keeps sections visible (see `style.css`).
+
+**Accessibility:** The stylesheet already respects **`prefers-reduced-motion: reduce`**—transitions and reveal transforms are disabled for users who opt out of motion at the OS level.
+
+## How to deploy
+
+This is a **static site**: upload the folder as-is.
+
+Common options:
+
+- **Any shared hosting** — FTP or file manager (cPanel, Plesk, etc.)  
+- **Netlify** or **Vercel** — drag-and-drop the folder or connect a Git repo  
+- **GitHub Pages** — publish the `demo/agency-landing` folder or your fork’s equivalent path  
+- **Cloudflare Pages** — similar to Netlify/Vercel  
+
+No build command is required—your host only needs to serve `index.html` and the `assets/` folder.
+
+## Before publishing checklist
+
+- [ ] Replace logo / brand text  
+- [ ] Update hero copy  
+- [ ] Update all CTA and nav `href` values  
+- [ ] Update services / capabilities  
+- [ ] Update case studies and metrics  
+- [ ] Update pricing  
+- [ ] Update testimonials  
+- [ ] Update FAQ  
+- [ ] Update footer and social links  
+- [ ] Replace or adjust abstract mockups if needed  
+- [ ] Wire contact/actions to a real form or URL if you collect leads  
+- [ ] Test the mobile menu  
+- [ ] Test the FAQ accordion  
+- [ ] Test on a phone and on desktop  
+
+## Support note
+
+Support covers **issues with the product files** as shipped. **Customization help, hosting setup, backend integrations, and third-party form configuration are not included.**
+
+## License placeholder
+
+Commercial use is allowed **according to the license terms** bundled with your Senatove Goods purchase. **Reselling, redistributing, or repackaging this template as your own digital product is not allowed.** Replace this paragraph with your final license text if you distribute derivative work under different terms.
