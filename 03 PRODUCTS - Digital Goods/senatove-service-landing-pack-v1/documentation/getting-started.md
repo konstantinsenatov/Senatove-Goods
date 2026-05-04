@@ -1,28 +1,43 @@
 # Getting Started
 
-## Open a Template
-1. Go to one of these folders:
+This guide helps buyers open the pack quickly and start editing without a build step.
+
+## Open a template
+
+1. Unzip the product package if you received it as an archive.
+2. Open one of these folders:
    - `agency-landing/`
    - `consultant-landing/`
    - `local-service-landing/`
-2. Open `index.html` in your browser.
+3. Open **`index.html`** in your browser:
+   - **Double-click** the file, or  
+   - Use your code editor’s **Live Preview** / **Simple HTTP server** if you prefer (helps with some browser security rules).
 
-## Preview Locally
-- Option 1: Open `index.html` directly.
-- Option 2: Use your editor's local server/live preview extension for auto-refresh.
+## Preview locally
 
-## Files To Edit First
-1. `index.html` (headlines, text, links, sections)
-2. `assets/css/style.css` (colors, spacing, layout values)
-3. `assets/js/main.js` (menu, FAQ, reveal behavior)
+- **Direct open:** works for reading layout and most static behavior.
+- **Local server:** use any static server you like (editor extension, `python -m http.server`, etc.) for a closer match to production URLs.
 
-## Recommended Editing Order
-1. Replace brand name and contact details
-2. Replace hero copy and CTA labels
-3. Replace services/offers and pricing details
-4. Replace reviews/testimonials and proof points
-5. Update colors and spacing
-6. Update links and form destinations
+## Files to edit first
 
-## Duplicate Before Editing
-- Duplicate the template folder first (example: `agency-landing-custom/`) so you keep the original version untouched.
+| File | Purpose |
+|------|--------|
+| `index.html` | Headlines, paragraphs, buttons, section order (careful), links |
+| `assets/css/style.css` | Colors (`:root` variables), spacing, typography |
+| `assets/js/main.js` | Mobile menu, FAQ, scroll effects (only if you need changes) |
+
+## Suggested editing order
+
+1. Replace **brand name** and **contact** (phone, email, social placeholders).
+2. Update **hero** and primary **CTAs**.
+3. Update **services / offers**, **pricing**, and **proof** (reviews, logos, metrics).
+4. Adjust **CSS variables** for your brand colors.
+5. Add real **`tel:`** and **`mailto:`** links (and wire **forms** if you use them).
+
+## Keep a backup
+
+Copy the whole template folder before heavy edits (for example `agency-landing-copy/`) so you can compare against the original structure.
+
+## Next steps
+
+Read **`customization.md`** for CSS variables, forms, animations, and deployment tips.

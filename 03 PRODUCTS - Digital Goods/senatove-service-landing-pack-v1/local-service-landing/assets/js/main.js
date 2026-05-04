@@ -1,8 +1,14 @@
+/**
+ * Local Service Landing — vanilla JS only (no dependencies).
+ * Header: mobile nav · FAQ · scroll reveals · sticky CTA scroll state
+ */
+
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Header — mobile menu */
 if (menuToggle && siteNav) {
   const closeMenu = () => {
     siteNav.classList.remove("open");
@@ -29,6 +35,7 @@ if (menuToggle && siteNav) {
   });
 }
 
+/* FAQ — accordion (+/− icon follows .open via CSS); aria-expanded stays in sync */
 const faqQuestions = document.querySelectorAll(".faq-question");
 
 faqQuestions.forEach((question) => {
@@ -73,6 +80,7 @@ if (!prefersReducedMotion) {
     });
   }
 
+  /* Sticky Mobile CTA — lightweight shadow after scroll */
   if (mobileCta) {
     const updateCtaState = () => {
       mobileCta.classList.toggle("scrolled", window.scrollY > 20);

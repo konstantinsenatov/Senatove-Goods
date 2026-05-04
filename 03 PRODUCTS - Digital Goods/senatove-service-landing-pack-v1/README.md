@@ -1,68 +1,103 @@
 # Senatove Service Landing Pack v1
 
-A premium HTML/CSS/JS landing page pack for service-based businesses, including three distinct templates for agencies, consultants, and local service providers.
+A premium **static HTML / CSS / JavaScript** landing page pack for service-based businesses. You get **three** distinct templates: one for **creative agencies**, one for **consultants and experts**, and one for **local service providers** (calls, quotes, service areas).
 
-## What Is Included
-- Agency Landing
-- Consultant Landing
-- Local Service Landing
-- Individual README files for each template
-- Shared documentation folder
-- Commercial-use license placeholder
+---
 
-## Template Overview
+## What this is
+
+- **Static HTML, CSS, and vanilla JS** — open files in an editor, edit, upload to hosting.
+- **No build tools** required (no Webpack, Vite, etc.).
+- **No npm** or `node_modules`.
+- **No frameworks** (no React, Vue, Bootstrap bundle, etc.).
+- **Basic HTML and CSS knowledge is recommended** so you can change copy, links, and variables confidently.
+
+---
+
+## What this is not
+
+- **Not a WordPress theme** — it does not install as a WP theme.
+- **Not a plugin** — there is no CMS plugin package.
+- **Not a no-code builder** — you edit markup and styles in source files.
+- **Not a CMS** — no content database or admin UI included.
+- **Not a backend** — no server-side code, accounts, or form processing built in.
+
+---
+
+## What’s included
+
+- **Agency Landing** — `agency-landing/`
+- **Consultant Landing** — `consultant-landing/`
+- **Local Service Landing** — `local-service-landing/`
+- **Per-template README** files inside each folder
+- **`documentation/`** — getting started, customization, license, changelog
+- **Commercial-use license** — see `documentation/license.md`
+
+---
+
+## Template overview
 
 ### Agency Landing
-- Best for digital agencies, studios, and creative teams
-- Portfolio-first structure
-- Case-study layout
-- Editorial studio feel
+
+For **creative studios**, **digital agencies**, and **service teams**. **Portfolio-first**, case-study friendly structure with work, process, and conversion blocks.
 
 ### Consultant Landing
-- Best for consultants, advisors, coaches, and expert personal brands
-- Authority-first structure
-- Method-led conversion flow
-- Personal expert feel
+
+For **consultants**, **advisors**, **coaches**, and **expert brands**. **Authority-first**, **method-led** flow with expertise, results, and engagement sections.
 
 ### Local Service Landing
-- Best for cleaning, repair, moving, clinics, home services, legal offices, and local businesses
-- Quote-first structure
-- Service areas section
-- Reviews and practical trust flow
-- Sticky mobile CTA
-- Local conversion feel
 
-## How To Use
-1. Open any template folder.
-2. Open `index.html` in your browser.
-3. Edit text in `index.html`.
-4. Edit colors in `assets/css/style.css`.
-5. Edit behavior in `assets/js/main.js`.
-6. Replace placeholder visuals in `assets/images/`.
+For **local businesses** (trades, cleaning, repairs, etc.). **Quote-first** layout with **service areas**, **reviews**, **pricing**, **FAQ**, and a **sticky mobile CTA** for calls and quotes.
 
-## Requirements
-- No build tools needed
-- No npm needed
-- No frameworks
-- Works as static HTML/CSS/JS
-- Basic HTML/CSS knowledge recommended
+---
 
-## Customization Notes
-- Edit copy directly in `index.html`
-- Update colors via CSS variables in `assets/css/style.css`
-- Adjust sections by editing or duplicating existing blocks
-- Update CTA labels and links to your preferred flow
-- Connect forms manually to your backend or form provider
-- Replace placeholder visuals inside `assets/images/`
+## Quick start
 
-## Important Form Note
-The included forms are front-end placeholders only. To collect submissions, connect them to your preferred form provider, backend, or CMS.
+1. Choose a template folder (`agency-landing/`, `consultant-landing/`, or `local-service-landing/`).
+2. Open `index.html` in your browser (double-click or use a local preview server).
+3. Edit **copy** in `index.html`.
+4. Edit **colors and layout tokens** in `assets/css/style.css` (see `:root` variables).
+5. Edit **interactions** in `assets/js/main.js` only if you need to change menu, FAQ, or motion behavior.
+6. Replace **placeholder contact details**, **phone**, **email**, and any **visuals** you add under `assets/images/`.
+7. **Upload** the folder (or your built static export) to your host.
 
-## License Placeholder
-This product includes a commercial-use license. Full license details are available in `documentation/license.md`.
+More detail: **`documentation/getting-started.md`** and **`documentation/customization.md`**.
 
-## Support Note
-Support is limited to product file issues. Customization, hosting, backend integration, and third-party form setup are not included.
+---
+
+## Important form note
+
+**Forms and quote panels in these templates are front-end placeholders only.** They do **not** collect or send submissions by default.
+
+To receive messages, connect them to a **form provider**, **backend**, **CMS form**, or **custom integration** (your own `action`, API, or embed).
+
+---
+
+## Before publishing checklist
+
+- Update **logo / brand name**
+- Update **hero** copy
+- Update **CTA** links (`href`, `tel:`, `mailto:`)
+- Update **services / offers**
+- Update **pricing**
+- Update **testimonials / reviews**
+- Update **FAQ**
+- Update **footer** links
+- Replace **placeholder visuals** if you use images (`assets/images/`)
+- Update **tel** and **mailto** links everywhere (including mobile CTA where applicable)
+- **Connect forms** if you need lead capture
+- Test **mobile menu**
+- Test **FAQ accordion**
+- Test layout on **desktop, tablet, and mobile**
+
+---
+
+## Support note
+
+Support is limited to **issues with the product files** (missing assets, broken references in the shipped package). **Customization**, **hosting setup**, **backend integration**, and **third-party form services** are **not** included.
+
+---
 
 ## Version
-Version: 1.0.0
+
+**1.0.0**

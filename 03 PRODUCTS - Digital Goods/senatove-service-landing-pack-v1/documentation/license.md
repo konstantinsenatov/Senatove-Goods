@@ -1,14 +1,24 @@
-# License (Placeholder)
+# License
 
-This is a commercial license placeholder for Senatove Service Landing Pack v1.
+Senatove Service Landing Pack v1 includes a **commercial-use license**.
 
-## Allowed
-- Buyer can use templates for personal and commercial projects.
-- Buyer can use templates for client projects.
+## You can
 
-## Not Allowed
-- Buyer cannot resell, redistribute, repackage, or claim the templates as their own product.
-- Buyer cannot upload the package for free distribution.
+- Use the templates for personal websites.
+- Use the templates for commercial websites.
+- Use the templates for client projects.
+- Customize the templates for your own or client projects.
+- Modify copy, colors, layouts, and sections for individual website builds.
 
-## Note
-This license text is a placeholder and not legal advice. Final license wording can be refined before public launch.
+## You cannot
+
+- Resell this product as a template pack.
+- Redistribute the original files.
+- Repackage the templates as your own digital product.
+- Upload the package for free download or public redistribution.
+- Claim the original template files as your own product.
+- Sell lightly modified versions as competing templates.
+
+## Notes
+
+This license applies to **Senatove Service Landing Pack v1** files included in this package.
