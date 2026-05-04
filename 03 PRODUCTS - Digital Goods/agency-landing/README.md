@@ -110,20 +110,25 @@ To collect form submissions you must connect:
 
 Those names are **examples only**—they are not bundled or required by this template.
 
-## How animations work
+## Animations and interactions (v1.1)
 
-- **Scroll reveal:** elements use classes like `.reveal`, `.reveal-up`, `.reveal-scale`. JavaScript adds `.js-enhanced` on the root and toggles `.is-visible` when sections enter the viewport (`IntersectionObserver`).  
-- **Stagger:** parent `.stagger` groups apply a short delay between child reveals.  
-- **Soft parallax:** `.parallax-soft` applies a light vertical shift on scroll (optional).  
-- **Mobile menu & FAQ:** toggled in `assets/js/main.js` with plain DOM APIs—no libraries.
+**No external animation libraries** (no GSAP, no Swiper, no Lottie). Motion is **progressive enhancement**: the page is readable with JavaScript off; without `IntersectionObserver`, all reveals are shown.
+
+- **Scroll reveal:** `.reveal`, `.reveal-up`, `.reveal-scale`, `.reveal-soft` start hidden only when `html.js-enhanced` is set. `main.js` adds `.is-visible` as blocks enter the viewport.
+- **Staggered cards:** parent `.stagger` applies a short increasing delay to child reveal elements (capabilities, work grid, process, benefits, pricing, etc.).
+- **Hover micro-interactions:** buttons, capability cards, work cases, price cards, and FAQ rows use subtle `translateY` and shadow (see `style.css`).
+- **Marquee strip:** the horizontal capability band after the hero is **pure CSS** (`@keyframes`). Hover pauses the motion.
+- **Soft parallax:** `.parallax-soft` on the studio board uses a light scroll-linked shift in JS—skip by removing the class or disabling JS motion block.
+- **Mobile menu & FAQ:** toggled in `assets/js/main.js` only (`aria-expanded` kept in sync).
+
+Smooth anchor scrolling uses `scroll-behavior: smooth` on `html` and is turned off when the user prefers reduced motion.
 
 ## How to disable animations
 
-**Option 1 — HTML:** Remove classes `reveal`, `reveal-up`, `reveal-scale`, `stagger` (from parents), and `parallax-soft` from elements you want static. Content stays visible without animation.
-
-**Option 2 — JavaScript:** Comment out or remove the block that adds `js-enhanced` and runs `IntersectionObserver` / parallax in `assets/js/main.js`. Without `.js-enhanced`, CSS keeps sections visible (see `style.css`).
-
-**Accessibility:** The stylesheet already respects **`prefers-reduced-motion: reduce`**—transitions and reveal transforms are disabled for users who opt out of motion at the OS level.
+1. **HTML:** Remove `reveal`, `reveal-up`, `reveal-scale`, `reveal-soft`, `stagger` (from parents), `parallax-soft`, and/or delete the **marquee** `<section class="marquee-section...">` block.
+2. **JavaScript:** Comment out the `js-enhanced` + `IntersectionObserver` (and optional parallax) block in `assets/js/main.js`.
+3. **Marquee only:** Remove the marquee section from `index.html` or remove the `@keyframes` / `.marquee-track` rules in `style.css`.
+4. **System preference:** `prefers-reduced-motion: reduce` already disables transitions, scroll smooth, and marquee/reveal motion in CSS.
 
 ## How to deploy
 

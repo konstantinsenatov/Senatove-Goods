@@ -77,19 +77,32 @@ The bar **`.mobile-cta`** is fixed to the bottom on smaller screens and **hidden
 
 ---
 
-## Animations and motion
+## Animations and interactions (v1.1)
 
-- Sections use **reveal classes** (`.reveal`, `.reveal-quick`, etc.) animated with `IntersectionObserver` when JS runs.
-- If the user’s system prefers reduced motion, **CSS `prefers-reduced-motion`** disables transitions and keeps content visible.
-- To **disable animations entirely**, remove the `reveal` / `reveal-quick` / `reveal-panel` classes from elements in `index.html`, or strip the relevant block from `main.js` (not required for most buyers).
+**No external libraries.** Reveals are progressive enhancement: if JavaScript is off or `IntersectionObserver` is missing, `main.js` leaves content visible.
+
+- **Scroll reveal:** `.reveal`, `.reveal-quick`, `.reveal-panel`, and trust strip items animate in once when scrolled into view (`.is-visible`).
+- **Stagger:** `.stagger` on **hero grid**, **service cards**, **results**, and **pricing** adds short delays between sibling cards for a calmer scan.
+- **Hover:** Service cards, quote/contact panels, and FAQ rows use subtle lift or border/shadow changes in `style.css`.
+- **Marquee:** The band between the trust strip and services is **CSS-only** (continuous loop); hover pauses it. Decorative only—not the only place trust copy appears.
+- **Sticky mobile CTA:** Same behavior as before—light scroll shadow on `.mobile-cta`; bottom padding on `body` helps avoid overlap with footer.
+
+**Smooth scrolling:** `html { scroll-behavior: smooth; }` is disabled automatically when `prefers-reduced-motion: reduce` is set.
+
+## How to disable animations
+
+1. Remove reveal classes and `.stagger` from `index.html`, and remove the **marquee** `<section class="marquee-section...">` if desired.
+2. Comment out the `js-enhanced` / `IntersectionObserver` block in `assets/js/main.js` (keep menu + FAQ handlers if you still want those).
+3. Delete or comment `@keyframes` / `.marquee-track` rules in `assets/css/style.css` to stop the marquee.
+4. Users can also enable **reduced motion** at the OS level—your CSS already respects it.
 
 ---
 
 ## JavaScript behavior (`assets/js/main.js`)
 
 - **Mobile menu:** toggle, link click closes menu, **Escape** closes menu.  
-- **FAQ:** clicking the question toggles **`.open`** on `.faq-item` and updates **`aria-expanded`**; **+ / −** is styled in CSS.  
-- **Reveal on scroll:** optional; fails open (everything visible) if `IntersectionObserver` is missing.
+- **FAQ:** toggles **`.open`** and **`aria-expanded`**; **+ / −** in CSS.  
+- **Reveal + stagger:** `IntersectionObserver` with safe fallbacks; stagger delays only inside `.stagger` groups.
 
 ---
 

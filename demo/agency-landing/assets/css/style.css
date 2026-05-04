@@ -785,7 +785,7 @@ ul {
 }
 
 .work-case:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
   border-color: #cabda8;
 }
@@ -1385,6 +1385,12 @@ ul {
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.faq-item:hover {
+  border-color: #cabda8;
+  box-shadow: var(--shadow-sm);
 }
 
 .faq-question {
@@ -1539,33 +1545,92 @@ body.nav-open {
   overflow: hidden;
 }
 
+/* ---------- Marquee (decorative strip; pure CSS) ---------- */
+.marquee-section--agency {
+  border-block: 1px solid #d4c9b5;
+  background: linear-gradient(90deg, #f6f0e3 0%, #faf6ee 50%, #f2eadc 100%);
+  padding: 0.65rem 0;
+  overflow: hidden;
+}
+
+.marquee-mask {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-agency 32s linear infinite;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.35rem;
+  padding-right: 2.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4a4436;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  color: #9a8d78;
+  font-weight: 500;
+  padding: 0 0.15rem;
+}
+
+.marquee-section--agency:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-agency {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* ---------- Animations: scroll reveal ---------- */
-/* To disable: remove .reveal / .reveal-up / .reveal-scale / .parallax-soft from HTML, or comment out the reveal block in assets/js/main.js */
+/* To disable: remove .reveal / .reveal-up / .reveal-scale / .reveal-soft / .parallax-soft from HTML, or comment out the reveal block in assets/js/main.js */
 .reveal,
 .reveal-up,
-.reveal-scale {
+.reveal-scale,
+.reveal-soft {
   opacity: 1;
   transform: none;
 }
 
 .js-enhanced .reveal,
 .js-enhanced .reveal-up,
-.js-enhanced .reveal-scale {
+.js-enhanced .reveal-scale,
+.js-enhanced .reveal-soft {
   opacity: 0;
 }
 
 .js-enhanced .reveal-up {
-  transform: translateY(24px);
+  transform: translateY(20px);
+}
+
+.js-enhanced .reveal-soft {
+  transform: translateY(16px);
 }
 
 .js-enhanced .reveal-scale {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .js-enhanced .is-visible {
   opacity: 1;
   transform: none;
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ---------- Reduced motion ---------- */
@@ -1580,7 +1645,9 @@ body.nav-open {
 
   .reveal,
   .reveal-up,
-  .reveal-scale {
+  .reveal-scale,
+  .reveal-soft,
+  .marquee-track {
     opacity: 1 !important;
     transform: none !important;
   }

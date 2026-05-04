@@ -1,6 +1,7 @@
 /**
  * Local Service Landing — vanilla JS only (no dependencies).
- * Header: mobile nav · FAQ · scroll reveals · sticky CTA scroll state
+ * Mobile nav, FAQ, scroll reveal + stagger, sticky CTA scroll state.
+ * See README: Animations and interactions.
  */
 
 const menuToggle = document.querySelector(".menu-toggle");
@@ -35,7 +36,7 @@ if (menuToggle && siteNav) {
   });
 }
 
-/* FAQ — accordion (+/− icon follows .open via CSS); aria-expanded stays in sync */
+/* FAQ — accordion; +/− via CSS */
 const faqQuestions = document.querySelectorAll(".faq-question");
 
 faqQuestions.forEach((question) => {
@@ -52,7 +53,15 @@ if (!prefersReducedMotion) {
   document.documentElement.classList.add("js-enhanced");
 
   const revealElements = document.querySelectorAll(".reveal, .reveal-quick, .reveal-panel, .trust-item");
+  const staggerGroups = document.querySelectorAll(".stagger");
   const mobileCta = document.querySelector(".mobile-cta");
+
+  staggerGroups.forEach((group) => {
+    const children = group.querySelectorAll(".reveal, .reveal-quick, .reveal-panel");
+    children.forEach((child, index) => {
+      child.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
+    });
+  });
 
   const showAll = () => {
     revealElements.forEach((element) => {
@@ -74,8 +83,10 @@ if (!prefersReducedMotion) {
       { threshold: 0.15, rootMargin: "0px 0px -7% 0px" }
     );
 
-    revealElements.forEach((element, index) => {
-      element.style.transitionDelay = `${Math.min(index * 35, 180)}ms`;
+    revealElements.forEach((element) => {
+      if (!element.closest(".stagger")) {
+        element.style.transitionDelay = "0ms";
+      }
       revealObserver.observe(element);
     });
   }

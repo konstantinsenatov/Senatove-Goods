@@ -53,14 +53,15 @@ faqQuestions.forEach((question) => {
 if (!prefersReducedMotion) {
   document.documentElement.classList.add("js-enhanced");
 
-  const revealElements = document.querySelectorAll(".reveal, .reveal-up, .reveal-scale");
+  const revealElements = document.querySelectorAll(".reveal, .reveal-up, .reveal-scale, .reveal-soft");
   const staggerGroups = document.querySelectorAll(".stagger");
   const parallaxElements = document.querySelectorAll(".parallax-soft");
 
+  /* Staggered delays on card grids (caps ~300ms total spread) */
   staggerGroups.forEach((group) => {
-    const children = group.querySelectorAll(".reveal, .reveal-up, .reveal-scale");
+    const children = group.querySelectorAll(".reveal, .reveal-up, .reveal-scale, .reveal-soft");
     children.forEach((child, index) => {
-      child.style.transitionDelay = `${index * 70}ms`;
+      child.style.transitionDelay = `${Math.min(index * 80, 280)}ms`;
     });
   });
 

@@ -1,3 +1,9 @@
+/**
+ * Senatove Consultant Landing — vanilla JS only.
+ * Mobile nav, FAQ, scroll reveal + stagger, method-step sequencing.
+ * See README.md: Animations and interactions.
+ */
+
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
@@ -46,6 +52,14 @@ if (!prefersReducedMotion) {
 
   const revealElements = document.querySelectorAll(".reveal, .reveal-soft, .reveal-line");
   const methodSteps = document.querySelectorAll(".method-step");
+  const staggerGroups = document.querySelectorAll(".stagger");
+
+  staggerGroups.forEach((group) => {
+    const children = group.querySelectorAll(".reveal, .reveal-soft, .reveal-line");
+    children.forEach((child, index) => {
+      child.style.transitionDelay = `${Math.min(index * 90, 300)}ms`;
+    });
+  });
 
   const showAll = () => {
     revealElements.forEach((element) => element.classList.add("is-visible"));
@@ -69,7 +83,7 @@ if (!prefersReducedMotion) {
     revealElements.forEach((element) => revealObserver.observe(element));
 
     methodSteps.forEach((step, index) => {
-      step.style.transitionDelay = `${index * 120}ms`;
+      step.style.transitionDelay = `${Math.min(index * 100, 320)}ms`;
       revealObserver.observe(step);
     });
   }

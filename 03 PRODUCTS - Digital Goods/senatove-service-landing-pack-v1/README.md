@@ -100,4 +100,4 @@ Support is limited to **issues with the product files** (missing assets, broken 
 
 ## Version
 
-**1.0.0**
+**1.1.0**

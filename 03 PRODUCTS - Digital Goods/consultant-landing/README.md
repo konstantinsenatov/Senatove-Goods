@@ -76,10 +76,24 @@ Edit **`:root`** at the top of `assets/css/style.css`:
 - Each question is a `<button class="faq-question">` with `.faq-question-text` and `.faq-toggle-icon` (visual **+** closed, **−** open).
 - **Hover** and **`:focus-visible`** styles are in CSS; behavior is toggled in `main.js` via `.open` on `.faq-item` and `aria-expanded`.
 
-## Animations
+## Animations and interactions (v1.1)
 
-- Classes: `.reveal`, `.reveal-soft`, `.reveal-line`, `.method-step` — observed once on scroll. **No parallax.**
-- Prefer reduced motion: CSS disables transitions when `prefers-reduced-motion: reduce` is set.
+**No external libraries.** Motion is optional: without JavaScript or without `IntersectionObserver`, reveals still become visible via fallbacks in `main.js`.
+
+- **Scroll reveal:** `.reveal`, `.reveal-soft`, `.reveal-line` use soft fade + small motion; `.is-visible` is applied when each block enters the viewport.
+- **Method steps:** `.method-step` uses the same observer with a gentle sequential delay.
+- **Stagger:** Parents with `.stagger` add short delays between child reveals (diagnosis rows, advisory cards, work examples, outcomes).
+- **Hover:** Advisory cards and diagnosis rows use subtle lift or background shifts (`style.css`).
+- **Marquee:** The horizontal expertise strip after the hero is **CSS-only**; hover pauses it. **No parallax** and no portfolio-style gimmicks.
+
+Smooth scrolling uses `html { scroll-behavior: smooth; }` and is disabled for reduced-motion users.
+
+## How to disable animations
+
+1. Remove reveal classes and `.stagger` from `index.html`, and remove the **marquee** `<section class="marquee-section...">` if you want a fully static page.
+2. Comment out the `js-enhanced` / `IntersectionObserver` block in `assets/js/main.js`.
+3. Remove or comment `@keyframes` and `.marquee-track` rules in `assets/css/style.css` to stop the strip.
+4. Rely on **`prefers-reduced-motion`** in the browser—already supported in CSS.
 
 ## Deployment
 
