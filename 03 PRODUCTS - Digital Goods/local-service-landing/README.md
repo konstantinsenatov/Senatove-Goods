@@ -1,140 +1,110 @@
 # Senatove Local Service Landing
 
-## Product / Template Name
-`Local Service Landing` is a premium practical landing page template from Senatove Service Landing Pack v1.
+## What this template is
 
-## Local-Service Design Direction
-- Practical call/quote-first landing flow
-- Trust-forward section rhythm for local customers
-- Service clarity before contact request
-- Mobile-friendly action design for quick booking behavior
+**Local Service Landing** is a single-page marketing layout for trades, cleaning, repairs, and other **local service businesses**. It ships as plain **HTML, CSS, and vanilla JavaScript**—no build step, no package manager, no frameworks.
 
-## Who This Is For
-- Cleaning companies
-- Repair services
-- Moving companies
-- Local clinics
-- Home service providers
-- Legal offices
-- Local studios
-- Small local businesses
+- **This is static HTML/CSS/JS** you edit in a code editor and host on any static host (or your own server).
+- **This is not a WordPress theme** and does not install into WP out of the box.
+- **This is not a no-code builder**—you change copy and structure by editing files.
+- **Basic HTML/CSS familiarity is recommended** so you can swap sections, links, and styling safely.
 
-## What Is Included
-- `local-service-landing/`
-  - `index.html`
-  - `assets/css/style.css`
-  - `assets/js/main.js`
-  - `assets/images/` (placeholder folder for visuals)
+## What is included
 
-Built with:
-- HTML
-- CSS
-- Vanilla JavaScript
+- `index.html` — page structure and copy placeholders
+- `assets/css/style.css` — all layout and visual styling
+- `assets/js/main.js` — mobile menu, FAQ accordion, optional scroll reveals, sticky CTA hint
+- `assets/images/` — add your own images here if needed (folder may be created by you)
 
-No frameworks, no build tools, and no dependencies required.
+**No npm, no external libraries, no CDN dependencies.** Everything works offline after download.
 
-## Page Structure
-1. Header
-2. Hero with quote/contact panel
-3. Trust strip
-4. Services
-5. Why Choose Us
-6. Service Areas
-7. Results
-8. Process
-9. Reviews
-10. Pricing
-11. FAQ
-12. Final quote/contact section
-13. Footer
-14. Sticky mobile CTA
+---
 
-## Call/Quote-First Conversion Flow
-- Hero introduces value and presents a visible quote request panel immediately
-- Trust strip validates reliability right after hero
-- Services, areas, reviews, and pricing reduce friction before contact
-- Final contact panel acts as a strong conversion close with clear response-time expectations
+## How to edit key content
 
-## How To Edit Copy
+### Services
+
 1. Open `index.html`.
-2. Update all headings, section text, CTA labels, and review quotes.
-3. Keep section IDs (`#services`, `#areas`, `#reviews`, `#pricing`, `#faq`, `#contact`) if you want navigation links to keep working.
+2. Find **`<!-- Services`** and the `.service-grid` block.
+3. Each **`.service-card`** has a letter **`.service-marker`** (purely visual—you can change `H`, `R`, etc., or restyle in CSS).
+4. Update **title** (`<h3>`), **description** (`<p>`), and **`.service-tag`** (the small line under each card).
 
-## How To Edit Services
-- In `index.html`, update the cards inside `.service-grid`.
-- Keep titles short and practical so customers can scan quickly.
-- Keep each card focused on one concrete customer need.
+### Service areas
 
-## How To Edit Service Areas
-- Update the list items inside `.areas-list`.
-- Replace area names with your real neighborhoods, cities, or regions.
-- If needed, split areas into zones (for example: North, Central, South clusters).
+1. Find **`<!-- Service Areas`** and `.areas-list`.
+2. Replace each `<li>` with your real neighborhoods, postal areas, or cities.
+3. You can add or remove `<li>` items; the grid will reflow.
 
-## How To Edit Pricing
-- Update blocks in `.pricing-grid`.
-- Edit plan names, price labels, included items, and CTA button text.
-- Keep one featured option by using `.price-card.featured` for your most-requested service.
-- Keep pricing copy practical and quote-friendly, not enterprise or agency-style.
+### Pricing
 
-## How To Edit Contact Details
-- Update phone, email, and response time inside `.contact-panel`.
-- Update `tel:#` in the sticky mobile CTA to a real phone link (example: `tel:+15551234567`).
+1. Find **`<!-- Pricing`** and `.pricing-grid`.
+2. Edit plan titles, `.price`, bullet `<li>` items, and button labels.
+3. The highlighted plan uses **`.price-card.featured`**—keep that class on the package you want to emphasize.
 
-## How To Connect The Placeholder Form
-- The hero quote panel is visual-only by default.
-- Replace placeholder fields with real `<input>` elements if needed.
-- Connect to your backend, form tool, or automation provider.
-- The note under the panel explains that this is a front-end placeholder.
-- No backend logic is included in this template by default.
+### Contact details
 
-## How The Sticky Mobile CTA Works
-- The sticky bar is `.mobile-cta`.
-- It appears on mobile/tablet and is hidden on desktop.
-- Buttons:
-  - `Call` (`tel:#` placeholder)
-  - `Get Quote` (`#contact`)
-- Add real phone links and verify that the bar does not overlap key mobile content.
+1. **Hero** quote block and **Final Contact** section both use placeholder copy.
+2. In **Final Contact** (`.contact-panel-inner`), update:
+   - Phone: set the display text and change `href="tel:#"` to a real number (e.g. `tel:+15551234567`).
+   - Email: use `mailto:your@email.com`.
+3. In **`<!-- Sticky Mobile CTA`** at the bottom of `index.html`, update `tel:#` the same way so mobile “Call” works.
 
-## Animation System
-- Reveal classes:
-  - `.reveal`
-  - `.reveal-quick`
-  - `.reveal-panel`
-  - `.trust-item`
-- Active class: `.is-visible`
-- Motion style is short and practical (faster than consultant, less cinematic than agency).
-- Includes quick hero panel reveal, trust strip reveal, and section-by-section entrance.
-- No parallax and no continuous decorative animation.
+---
 
-## How To Reduce / Disable Animations
-- CSS includes `prefers-reduced-motion: reduce` support.
-- In reduced motion mode:
-  - transitions/animations are disabled
-  - reveal elements remain fully visible
-  - smooth scrolling is disabled
-- You can also remove reveal classes from HTML for a static presentation.
+## Quote / lead form (important)
 
-## How The JavaScript Works
-`assets/js/main.js` includes:
-- Mobile menu open/close toggle
-- Auto-close menu when nav links are clicked
-- Close menu on `Esc`
-- FAQ accordion open/close
-- IntersectionObserver reveal handling
-- Safe fallback: if observer is unavailable, all reveal elements stay visible
-- Optional minimal sticky CTA shadow state on scroll
+The quote area in the hero is a **static front-end placeholder** only. It shows labeled “field” blocks so buyers can see the layout; it does **not** collect or send data by itself.
 
-## Quick Customization Checklist
-- Replace brand name (`Senatove Local`) in header/footer
-- Update services to match your exact business type
-- Replace service areas with real local coverage
-- Add real customer reviews and names
-- Update pricing and featured offer
-- Replace quote panel placeholders with real form fields (optional)
-- Add real phone/email and update `tel:` link
-- Connect CTA buttons to your quote flow
-- Test sticky mobile CTA on real device widths before shipping
+**To receive submissions**, connect real `<form>` markup and a backend or third-party form service. Examples buyers often use (optional—not bundled, not required):
 
-## Basic License (Placeholder)
-This template is part of a paid digital product by Senatove Goods.  
-Replace this section with your final commercial license terms before distribution.
+- **Formspree**, **Getform**, similar hosted form endpoints  
+- **Netlify Forms** (when hosting on Netlify)  
+- A **custom backend** or serverless handler  
+- **WordPress** with a form plugin **if** you manually embed this HTML inside a WP template or page
+
+Add your own `action=`, hidden fields, or JavaScript as required by the provider you choose.
+
+---
+
+## Sticky mobile CTA
+
+The bar **`.mobile-cta`** is fixed to the bottom on smaller screens and **hidden from 1024px and up** (desktop uses header + in-page CTAs).
+
+- **Call** → set `href` to your real `tel:` link.  
+- **Get Quote** → points to `#contact` (final contact section). Adjust if you add a dedicated form ID.
+
+`assets/js/main.js` adds a light **scroll shadow** on the bar (`.scrolled`) for depth; no layout shift. The page uses **extra bottom padding** on viewports where the bar shows so footer and final contact are less likely to sit under the bar—still test on a real phone.
+
+---
+
+## Animations and motion
+
+- Sections use **reveal classes** (`.reveal`, `.reveal-quick`, etc.) animated with `IntersectionObserver` when JS runs.
+- If the user’s system prefers reduced motion, **CSS `prefers-reduced-motion`** disables transitions and keeps content visible.
+- To **disable animations entirely**, remove the `reveal` / `reveal-quick` / `reveal-panel` classes from elements in `index.html`, or strip the relevant block from `main.js` (not required for most buyers).
+
+---
+
+## JavaScript behavior (`assets/js/main.js`)
+
+- **Mobile menu:** toggle, link click closes menu, **Escape** closes menu.  
+- **FAQ:** clicking the question toggles **`.open`** on `.faq-item` and updates **`aria-expanded`**; **+ / −** is styled in CSS.  
+- **Reveal on scroll:** optional; fails open (everything visible) if `IntersectionObserver` is missing.
+
+---
+
+## Before publishing checklist
+
+- [ ] Replace brand name “Senatove Local” everywhere (header, footer, title if needed).  
+- [ ] Set real **services**, **areas**, **reviews**, and **pricing**.  
+- [ ] Set **phone** (`tel:`) and **email** (`mailto:`) and test on a device.  
+- [ ] Wire the **quote block** to your form provider or backend if you need leads.  
+- [ ] Test **mobile** menu, **FAQ** open/close, and **sticky CTA** above the footer.  
+- [ ] Confirm **no horizontal scroll** on 375px / 768px / desktop.  
+- [ ] Run a quick **console** check for errors after any custom scripts you add.
+
+---
+
+## License (placeholder)
+
+This template is part of a Senatove Goods product. Replace this section with your final license before redistributing.

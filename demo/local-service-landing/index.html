@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="logo" href="#top">Senatove Local</a>
@@ -30,6 +31,7 @@
   </header>
 
   <main>
+    <!-- Hero / Quote Panel -->
     <section class="section hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal reveal-quick">
@@ -47,18 +49,27 @@
             <li>Clear Pricing</li>
           </ul>
         </div>
-        <aside class="quote-panel reveal reveal-panel" aria-label="Quote request panel">
-          <h2>Request a quick quote</h2>
-          <div class="field">Name</div>
-          <div class="field">Service needed</div>
-          <div class="field">Phone or email</div>
-          <div class="field">Preferred time</div>
-          <a class="btn btn-primary quote-btn" href="#contact">Send Request</a>
-          <p class="panel-note">Form is a front-end placeholder. Connect it to your preferred form provider or backend.</p>
+        <aside class="quote-panel reveal reveal-panel" id="quote-panel" aria-label="Quote request panel">
+          <p class="quote-trust-badge"><span class="quote-trust-dot" aria-hidden="true"></span> Usually replies within 24 hours</p>
+          <div class="quote-panel-head">
+            <p class="eyebrow quote-panel-eyebrow">Quick quote</p>
+            <h2 class="quote-panel-title">Tell us what you need—we’ll follow up with next steps</h2>
+          </div>
+          <div class="quote-fields">
+            <div class="field"><span class="field-placeholder">Name</span></div>
+            <div class="field"><span class="field-placeholder">Service needed</span></div>
+            <div class="field"><span class="field-placeholder">Phone or email</span></div>
+            <div class="field"><span class="field-placeholder">Preferred time</span></div>
+          </div>
+          <p class="quote-placeholder-note">No obligation. Use this block as a front-end placeholder—wire it to your form tool when ready.</p>
+          <a class="btn btn-primary quote-btn quote-btn-send" href="#contact">Send Request</a>
+          <p class="quote-service-trust">Clear estimates • Local team • Flexible scheduling</p>
+          <p class="panel-note">Static preview only. Connect fields to a form provider, backend, or CMS to receive submissions.</p>
         </aside>
       </div>
     </section>
 
+    <!-- Trust Strip -->
     <section class="trust-strip reveal reveal-quick" aria-label="Trust highlights">
       <div class="container trust-strip-inner">
         <p class="trust-item">Same-week availability</p>
@@ -68,6 +79,7 @@
       </div>
     </section>
 
+    <!-- Services -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head reveal reveal-quick">
@@ -77,20 +89,36 @@
         </div>
         <div class="service-grid">
           <article class="service-card reveal reveal-quick">
-            <h3>Home Cleaning</h3>
-            <p>Routine or deep cleaning services for homes that need reliable and consistent care.</p>
+            <span class="service-marker" aria-hidden="true">H</span>
+            <div class="service-card-body">
+              <h3>Home Cleaning</h3>
+              <p>Routine or deep cleaning for homes that need reliable, consistent care.</p>
+              <p class="service-tag">Regular or one-time</p>
+            </div>
           </article>
           <article class="service-card reveal reveal-quick">
-            <h3>Repair &amp; Maintenance</h3>
-            <p>Fix common issues quickly with transparent scope, timing, and service expectations.</p>
+            <span class="service-marker" aria-hidden="true">R</span>
+            <div class="service-card-body">
+              <h3>Repair &amp; Maintenance</h3>
+              <p>Fix common issues with transparent scope, timing, and expectations.</p>
+              <p class="service-tag">Small repairs</p>
+            </div>
           </article>
           <article class="service-card reveal reveal-quick">
-            <h3>Inspection Visit</h3>
-            <p>Start with an on-site review to understand needs and prepare a clear service estimate.</p>
+            <span class="service-marker" aria-hidden="true">I</span>
+            <div class="service-card-body">
+              <h3>Inspection Visit</h3>
+              <p>On-site review to understand needs and prepare a clear estimate.</p>
+              <p class="service-tag">On-site check</p>
+            </div>
           </article>
           <article class="service-card reveal reveal-quick">
-            <h3>Emergency Support</h3>
-            <p>Priority support for urgent service situations that require immediate local response.</p>
+            <span class="service-marker" aria-hidden="true">E</span>
+            <div class="service-card-body">
+              <h3>Emergency Support</h3>
+              <p>Priority routing when you need a fast local response.</p>
+              <p class="service-tag">Fast response</p>
+            </div>
           </article>
         </div>
       </div>
@@ -111,6 +139,7 @@
       </div>
     </section>
 
+    <!-- Service Areas -->
     <section class="section" id="areas">
       <div class="container">
         <div class="section-head reveal reveal-quick">
@@ -129,30 +158,81 @@
       </div>
     </section>
 
+    <!-- Results -->
     <section class="section section-muted">
       <div class="container">
         <div class="section-head reveal reveal-quick">
           <p class="eyebrow">Results</p>
-          <h2>Make the result feel visible.</h2>
+          <h2>Make the outcome easy to picture.</h2>
         </div>
         <div class="result-grid">
           <article class="result-block reveal reveal-quick">
-            <div class="result-visual" aria-hidden="true"></div>
+            <div class="result-mockup" aria-hidden="true">
+              <div class="result-mockup-top">
+                <div class="result-split">
+                  <div class="result-split-half result-split-before">
+                    <span class="result-split-label">Before</span>
+                    <div class="result-bar result-bar-weak"></div>
+                    <div class="result-bar result-bar-weak short"></div>
+                  </div>
+                  <div class="result-split-divider"></div>
+                  <div class="result-split-half result-split-after">
+                    <span class="result-split-label">After</span>
+                    <div class="result-bar result-bar-strong"></div>
+                    <div class="result-bar result-bar-strong"></div>
+                  </div>
+                </div>
+                <span class="result-status-badge">Completed</span>
+              </div>
+              <ul class="result-checklist">
+                <li>Rooms reset &amp; surfaces cleared</li>
+                <li>Photos for your records</li>
+              </ul>
+            </div>
             <h3>Cleaner space, less stress</h3>
-            <p>Service outcomes presented clearly so customers know what to expect.</p>
-            <strong>Same-week availability</strong>
+            <p>Customers see a clear before/after story and know what “done” looks like.</p>
+            <strong class="result-foot">Same-week availability</strong>
           </article>
           <article class="result-block reveal reveal-quick">
-            <div class="result-visual" aria-hidden="true"></div>
+            <div class="result-mockup" aria-hidden="true">
+              <div class="result-mockup-top">
+                <div class="result-progress-card">
+                  <span class="result-progress-label">Job status</span>
+                  <div class="result-progress-track"><span class="result-progress-fill"></span></div>
+                  <p class="result-progress-meta">Response • Schedule • Fix • Confirm</p>
+                </div>
+                <span class="result-status-badge">In progress → Done</span>
+              </div>
+              <ul class="result-checklist">
+                <li>Issue triaged same day</li>
+                <li>Estimate approved before work</li>
+              </ul>
+            </div>
             <h3>Faster issue resolution</h3>
-            <p>Quicker communication and cleaner service flow from inquiry to completion.</p>
-            <strong>24h response window</strong>
+            <p>Shorter wait times and fewer back-and-forth messages from request to fix.</p>
+            <strong class="result-foot">24h response window</strong>
           </article>
           <article class="result-block reveal reveal-quick">
-            <div class="result-visual" aria-hidden="true"></div>
+            <div class="result-mockup" aria-hidden="true">
+              <div class="result-mockup-top">
+                <div class="result-summary-card">
+                  <span class="result-summary-title">Visit summary</span>
+                  <ul class="result-mini-list">
+                    <li><span class="result-mini-check" aria-hidden="true">✓</span> Areas reviewed</li>
+                    <li><span class="result-mini-check" aria-hidden="true">✓</span> Next steps sent</li>
+                    <li><span class="result-mini-check" aria-hidden="true">✓</span> Maintenance tips</li>
+                  </ul>
+                </div>
+                <span class="result-status-badge">On file</span>
+              </div>
+              <ul class="result-checklist">
+                <li>Seasonal check completed</li>
+                <li>Plain-language recap</li>
+              </ul>
+            </div>
             <h3>Better maintained property</h3>
-            <p>Consistent service quality with clear updates and documented outcomes.</p>
-            <strong>Clear job summary</strong>
+            <p>Ongoing care with updates your customer can track between visits.</p>
+            <strong class="result-foot">Clear job summary</strong>
           </article>
         </div>
       </div>
@@ -196,6 +276,7 @@
       </div>
     </section>
 
+    <!-- Pricing -->
     <section class="section" id="pricing">
       <div class="container">
         <div class="section-head reveal reveal-quick">
@@ -243,6 +324,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="section section-muted" id="faq">
       <div class="container">
         <div class="section-head reveal reveal-quick">
@@ -251,41 +333,60 @@
         </div>
         <div class="faq-list">
           <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">Can I customize this for my business type?</button>
-            <div class="faq-answer"><p>Yes. Replace service names, copy, and contact details to match your local business model.</p></div>
+            <button type="button" class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-a1">
+              <span class="faq-question-text">Can I customize this for my business type?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-btn-1"><p>Yes. Replace service names, copy, and contact details to match your local business model.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">Can I change the service areas?</button>
-            <div class="faq-answer"><p>Yes. Update the areas section with your real neighborhoods, cities, or service regions.</p></div>
+            <button type="button" class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-a2">
+              <span class="faq-question-text">Can I change the service areas?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-btn-2"><p>Yes. Update the areas section with your real neighborhoods, cities, or service regions.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">Does this template include a working contact form?</button>
-            <div class="faq-answer"><p>No backend is included. The quote form is a front-end placeholder ready to connect to your preferred form tool.</p></div>
+            <button type="button" class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-a3">
+              <span class="faq-question-text">Does this template include a working contact form?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-btn-3"><p>No backend is included. The quote form is a front-end placeholder ready to connect to your preferred form tool.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">Is it responsive on mobile?</button>
-            <div class="faq-answer"><p>Yes. Layout, navigation, and CTA flow are optimized for mobile, tablet, and desktop.</p></div>
+            <button type="button" class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-a4">
+              <span class="faq-question-text">Is it responsive on mobile?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-btn-4"><p>Yes. Layout, navigation, and CTA flow are optimized for mobile, tablet, and desktop.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-question" aria-expanded="false">Can I use this for client projects?</button>
-            <div class="faq-answer"><p>Yes, subject to your final license terms for this product pack.</p></div>
+            <button type="button" class="faq-question" aria-expanded="false" id="faq-btn-5" aria-controls="faq-a5">
+              <span class="faq-question-text">Can I use this for client projects?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-btn-5"><p>Yes, subject to your final license terms for this product pack.</p></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section final-contact" id="contact">
+    <!-- Final Contact -->
+    <section class="section final-contact final-contact-strong" id="contact">
       <div class="container contact-grid">
-        <div class="reveal reveal-quick">
+        <div class="contact-intro reveal reveal-quick">
           <p class="eyebrow">Contact</p>
-          <h2>Ready to make your local service easier to book?</h2>
-          <p>Use a clear, trust-focused page to explain your services, show your areas, and guide customers toward the next step.</p>
+          <h2>Book faster with one clear next step.</h2>
+          <p class="contact-lead">Share how you prefer to be reached, what you need, and when you’re available—we’ll confirm details and schedule from there.</p>
         </div>
-        <aside class="contact-panel reveal reveal-panel">
-          <p><strong>Call us:</strong> (000) 123-4567</p>
-          <p><strong>Email:</strong> hello@example.com</p>
-          <p><strong>Response time:</strong> Within 24 hours</p>
-          <a class="btn btn-primary" href="#top">Get a Quote</a>
+        <aside class="contact-panel contact-panel-primary reveal reveal-panel">
+          <div class="contact-panel-inner">
+            <p class="contact-panel-prompt"><strong>Call us:</strong> <a href="tel:#">(000) 123-4567</a></p>
+            <p><strong>Email:</strong> <a href="mailto:hello@example.com">hello@example.com</a></p>
+            <p><strong>Response time:</strong> Within 24 hours</p>
+            <a class="btn btn-primary contact-panel-cta" href="#quote-panel">Get a Quote</a>
+            <p class="contact-panel-trust">Serving nearby neighborhoods with clear communication and reliable scheduling.</p>
+          </div>
         </aside>
       </div>
     </section>
@@ -313,6 +414,7 @@
     </div>
   </footer>
 
+  <!-- Sticky Mobile CTA -->
   <div class="mobile-cta" aria-label="Mobile actions">
     <a href="tel:#">Call</a>
     <a href="#contact">Get Quote</a>
